@@ -1,0 +1,100 @@
+{
+  "source": "genshinsim/gcsim @ main (raw.githubusercontent.com), fetched 2026-11-26",
+  "frame_to_second": 60,
+  "notes": "所有数值取自 Go 源码；中文命座/天赋原名未核到；90 级基础面板未核到。",
+  "hutao": {
+    "element": "Pyro", "weapon": "Polearm", "rarity": 5,
+    "energy_max": 60,
+    "skill_con": 3, "burst_con": 5,
+    "talent_tables_lv1_to_15": {
+      "n1": [46.8864, 107.6256],
+      "n2": [48.2539, 110.7647],
+      "n3": [61.05, 140.1375],
+      "n4": [65.641, 150.6758],
+      "n5": [33.2737, 76.3782], "n5_second": [35.2, 80.8],
+      "n6": [85.9584, 197.3136],
+      "charge": [135.96, 312.09],
+      "collision": [65.4192, 150.1668],
+      "low_plunge": [130.8107, 300.27],
+      "high_plunge": [163.3896, 375.0534],
+      "paramita_atk_pct_maxhp": [3.841, 7.751],
+      "blood_blossom_dmg": [64, 152],
+      "burst": [303.272, 611.992],
+      "burst_low_hp": [379.09, 764.99],
+      "burst_regen_pct_maxhp": [6.2625, 12.6375],
+      "burst_regen_low_hp_pct_maxhp": [8.35, 16.85]
+    },
+    "skill": {
+      "name_en": "Guide to Afterlife",
+      "atk_bonus": "ppatk[lv] * MaxHP, capped at BaseATK * 4",
+      "duration_sec": 9, "cooldown_sec": 16,
+      "hp_cost_pct_current_hp": 30,
+      "particles": "2 or 3 (50% for 3), ICD 5s",
+      "blood_blossom_apply": "Paramita charged attack (E-empowered CA); burst also applies at C2+",
+      "blood_blossom_tick_sec": 4, "blood_blossom_duration_sec": 9.5
+    },
+    "burst": {
+      "name_en": "Spirit Soother",
+      "cooldown_sec": 15, "energy_cost": 60,
+      "low_hp_threshold_pct": 50, "heal_max_times": 5
+    },
+    "passives": [
+      {"id": "A1", "name_cn": null, "trigger": "Paramita Papilio ends", "effect": "all allies except Hu Tao: CRIT Rate +12% for 8s"},
+      {"id": "A4", "name_cn": null, "trigger": "HP <= 50%", "effect": "Pyro DMG Bonus +33%", "note": "in-game checks every 0.3s"}
+    ],
+    "constellations": [
+      {"c": 1, "name_cn": null, "effect": "charged attacks during Paramita Papilio cost 0 stamina", "numbers": {"stamina_cost": 0}},
+      {"c": 2, "name_cn": null, "effect": "Blood Blossom DMG increased by 10% of Max HP; burst also applies Blood Blossom", "numbers": {"flat_dmg_pct_maxhp": 10}},
+      {"c": 3, "name_cn": null, "effect": "Elemental Skill level +3"},
+      {"c": 4, "name_cn": null, "effect": "after defeating enemy affected by own Blood Blossom, allies except Hu Tao gain CRIT Rate", "numbers": {"crit_rate_pct": 12, "duration_sec": 15}},
+      {"c": 5, "name_cn": null, "effect": "Elemental Burst level +3"},
+      {"c": 6, "name_cn": null, "effect": "at HP <= 25% or lethal hit: CRIT Rate +100% for 10s, revive to 1 HP if dead", "numbers": {"hp_threshold_pct": 25, "crit_rate_pct": 100, "duration_sec": 10, "icd_sec": 60}}
+    ],
+    "level_90_base_stats": null
+  },
+  "yelan": {
+    "element": "Hydro", "weapon": "Bow", "rarity": 5,
+    "energy_max": 70,
+    "skill_con": 5, "burst_con": 3,
+    "talent_tables_lv1_to_15": {
+      "n1": [40.678, 108.79],
+      "n2": [39.044, 104.42],
+      "n3": [51.6, 138],
+      "n4": [32.508, 86.94],
+      "aim": [43.86, 117.3],
+      "full_aim": [124, 294.5],
+      "breakthrough_barb_pct_maxhp": [11.576, 27.493],
+      "skill_pct_maxhp": [22.6136, 53.7073],
+      "burst_pct_maxhp": [7.308, 17.3565],
+      "exquisite_throw_per_dice_pct_maxhp": [4.872, 11.571],
+      "exquisite_throw_dice_count": 3
+    },
+    "skill": {
+      "name_en": "Lingering Lifeline",
+      "cooldown_sec": 10, "particles": 4, "particle_icd_sec": 0.3,
+      "breakthrough_chance_per_target": 0.34,
+      "burst_trigger_on_hit": true
+    },
+    "burst": {
+      "name_en": "Depth-Clarion Dice",
+      "cooldown_sec": 18, "energy_cost": 70, "duration_sec": 15,
+      "exquisite_throw_trigger": "normal attack hit or skill hit",
+      "exquisite_throw_icd_sec": 1,
+      "hydro_application": "every 3rd hit"
+    },
+    "passives": [
+      {"id": "A1", "name_cn": null, "trigger": "party elemental type count 1/2/3/4", "effect": "Max HP +6%/12%/18%/30%"},
+      {"id": "A4", "name_cn": null, "trigger": "while Exquisite Throw is active", "effect": "active character DMG +1%, +3.5% per second, max +50%, 15s"}
+    ],
+    "constellations": [
+      {"c": 1, "name_cn": null, "effect": "Elemental Skill gains 1 additional charge", "numbers": {"charges": 2}},
+      {"c": 2, "name_cn": null, "effect": "Exquisite Throw deals additional DMG", "numbers": {"pct_maxhp": 14, "icd_sec": 1.8}},
+      {"c": 3, "name_cn": null, "effect": "Elemental Burst level +3"},
+      {"c": 4, "name_cn": null, "effect": "each enemy marked by Lifeline grants party Max HP", "numbers": {"pct_per_enemy": 10, "cap_pct": 40, "duration_sec": 25}},
+      {"c": 5, "name_cn": null, "effect": "Elemental Skill level +3"},
+      {"c": 6, "name_cn": null, "effect": "status after burst lasts 20s; concrete buff not implemented in fetched code", "numbers": {"duration_sec": 20}, "verified": "partial"}
+    ],
+    "level_90_base_stats": null
+  }
+}
+

@@ -1,0 +1,291 @@
+{
+  "ganyu": {
+    "name_cn": "甘雨",
+    "name_en": "Ganyu",
+    "element": "冰",
+    "weapon": "弓",
+    "rarity": 5,
+    "constellation_name_cn": "仙麟座",
+    "stats": {
+      "lvl90": {
+        "hp": 9797,
+        "atk": 335,
+        "def": 630
+      },
+      "ascension_stat": "暴击伤害",
+      "ascension_value_lvl90": "38.4%",
+      "note": "突破前/突破后数值见 biligame 属性表；90级行仅给突破后"
+    },
+    "constellations": [
+      {
+        "id": "c1",
+        "name_cn": "饮露",
+        "summary": "二段蓄力重击的霜华矢或霜华绽发命中敌人时，使敌人冰元素抗性降低，并为甘雨回能",
+        "numbers": {
+          "cryo_res_shred": "15%",
+          "debuff_duration_s": 6,
+          "energy_restored": 2,
+          "energy_restore_per": "每次二段蓄力重击只触发一次"
+        }
+      },
+      {
+        "id": "c2",
+        "name_cn": "获麟",
+        "summary": "山泽麟迹的可使用次数增加1次",
+        "numbers": {
+          "skill_charges_plus": 1
+        }
+      },
+      {
+        "id": "c3",
+        "name_cn": "云行",
+        "summary": "降众天华技能等级提高3级",
+        "numbers": {
+          "burst_lvl_plus": 3,
+          "cap_lvl": 15
+        }
+      },
+      {
+        "id": "c4",
+        "name_cn": "西狩",
+        "summary": "降众天华领域内敌人受到伤害增加，随时间逐步加强",
+        "numbers": {
+          "initial_dmg_taken_bonus": "5%",
+          "step_per_3s": "5%",
+          "max": "25%",
+          "after_leaving_domain_max_s": 3,
+          "note": "biligame 注明该效果与自身伤害加成同乘区相加"
+        }
+      },
+      {
+        "id": "c5",
+        "name_cn": "折草",
+        "summary": "山泽麟迹技能等级提高3级",
+        "numbers": {
+          "skill_lvl_plus": 3,
+          "cap_lvl": 15
+        }
+      },
+      {
+        "id": "c6",
+        "name_cn": "履虫",
+        "name_cn_note": "biligame 原文如此，与通行译名需二次校对",
+        "summary": "施放山泽麟迹后30秒内第一次霜华矢无需蓄力",
+        "numbers": {
+          "window_s": 30
+        }
+      }
+    ],
+    "passives": [
+      {
+        "name_cn": "唯此一心",
+        "unlock": "角色突破等级1",
+        "effect": "霜华矢发射后的5秒内，使接下来发射的霜华矢与这些霜华矢引发的霜华绽发的暴击率提高20%",
+        "numbers": {
+          "window_s": 5,
+          "crit_rate_plus": "20%"
+        }
+      },
+      {
+        "name_cn": "天地交泰",
+        "unlock": "角色突破等级4",
+        "effect": "降众天华领域内的队伍中当前场上角色获得20%冰元素伤害加成",
+        "numbers": {
+          "cryo_dmg_bonus": "20%"
+        }
+      },
+      {
+        "name_cn": "藏弓待用",
+        "unlock": "生活/探索天赋",
+        "effect": "锻造弓类武器时，返还15%消耗的矿石",
+        "numbers": {
+          "ore_refund": "15%"
+        }
+      }
+    ],
+    "skills": {
+      "normal_attack": {
+        "name_cn": "流天射术",
+        "type": "弓",
+        "lv1": {
+          "n1": "31.7%",
+          "n2": "35.6%",
+          "n3": "45.5%",
+          "n4": "45.5%",
+          "n5": "48.3%",
+          "n6": "57.6%",
+          "aimed_shot": "43.9%",
+          "aimed_charged_1": "124%",
+          "frostflake_arrow_hit": "128%",
+          "frostflake_bloom": "218%",
+          "plunge_impact": "56.8%",
+          "plunge_low_high": "114%/142%"
+        },
+        "charge_levels": "一段蓄力=冰箭；二段蓄力=霜华矢（命中后霜华绽发，再次造成冰元素范围伤害）",
+        "charge_time_s": "未核到（biligame 页面无具体秒数，gcsim aimed.go 未读）"
+      },
+      "skill": {
+        "name_cn": "山泽麟迹",
+        "lv1": {
+          "ice_lotus_hp_inherit": "120%",
+          "skill_dmg": "132%"
+        },
+        "duration_s": 6,
+        "cd_s": 10,
+        "particles": "后撤伤害命中：2 冰元素微粒；冰莲爆裂命中：2 冰元素微粒",
+        "mechanic": "留下冰莲，冰莲被击破/到时爆裂造成冰元素范围伤害，形状继承生命值"
+      },
+      "burst": {
+        "name_cn": "降众天华",
+        "lv1": {
+          "icicle_dmg": "70%"
+        },
+        "duration_s": 15,
+        "cd_s": 15,
+        "energy_cost": 60
+      }
+    }
+  },
+  "xiao": {
+    "name_cn": "魈",
+    "name_en": "Xiao",
+    "element": "风",
+    "weapon": "长柄武器",
+    "rarity": 5,
+    "constellation_name_cn": "金翅鹏王座",
+    "stats": {
+      "lvl90": {
+        "hp": 12736,
+        "atk": 349,
+        "def": 799
+      },
+      "ascension_stat": "暴击率",
+      "ascension_value_lvl90": "19.2%"
+    },
+    "constellations": [
+      {
+        "id": "c1",
+        "name_cn": "坏劫·毁坏三界",
+        "summary": "风轮两立的可使用次数增加1次",
+        "numbers": {
+          "skill_charges_plus": 1
+        }
+      },
+      {
+        "id": "c2",
+        "name_cn": "空劫·虚空华开敷变",
+        "summary": "处在队伍后台时，自己的元素充能效率提高",
+        "numbers": {
+          "energy_recharge_plus": "25%"
+        }
+      },
+      {
+        "id": "c3",
+        "name_cn": "降魔·忿怒显相",
+        "summary": "风轮两立技能等级提高3级",
+        "numbers": {
+          "skill_lvl_plus": 3,
+          "cap_lvl": 15
+        }
+      },
+      {
+        "id": "c4",
+        "name_cn": "神通·诸苦灭尽",
+        "summary": "生命值低于50%时获得防御力提升",
+        "numbers": {
+          "hp_threshold": "50%",
+          "def_plus": "100%"
+        }
+      },
+      {
+        "id": "c5",
+        "name_cn": "成劫·无明增长",
+        "summary": "靖妖傩舞技能等级提高3级",
+        "numbers": {
+          "burst_lvl_plus": 3,
+          "cap_lvl": 15
+        }
+      },
+      {
+        "id": "c6",
+        "name_cn": "降魔·护法夜叉",
+        "summary": "靖妖傩舞状态下下落攻击命中至少2个敌人时，风轮两立立刻获得1次可使用次数并短暂无视冷却",
+        "numbers": {
+          "min_enemies": 2,
+          "charges_gained": 1,
+          "no_cd_window_s": 1
+        }
+      }
+    ],
+    "passives": [
+      {
+        "name_cn": "降魔·平妖大圣",
+        "unlock": "角色突破等级1",
+        "effect": "靖妖傩舞状态下魈造成的伤害提升5%，每3秒再提升5%，至多提升25%",
+        "numbers": {
+          "base_dmg_bonus": "5%",
+          "step": "5%/3s",
+          "max": "25%"
+        },
+        "source_note": "数值来自 gcsim internal/characters/xiao/xiao.go 的 A1 注释；biligame 仅给名称"
+      },
+      {
+        "name_cn": "坏劫·国土碾尘",
+        "unlock": "角色突破等级4",
+        "effect": "施放风轮两立使之后7秒内的风轮两立造成的伤害提高15%，持续7秒，最多叠加3次，叠加时刷新持续时间",
+        "numbers": {
+          "dmg_bonus_per_stack": "15%",
+          "duration_s": 7,
+          "max_stacks": 3
+        }
+      },
+      {
+        "name_cn": "神通·空中自在法",
+        "unlock": "探索天赋",
+        "effect": "队伍中自己的角色攀爬消耗的体力降低20%，无法与效果完全相同的突破天赋叠加",
+        "numbers": {
+          "climb_stamina_reduction": "20%"
+        }
+      }
+    ],
+    "skills": {
+      "normal_attack": {
+        "name_cn": "卷积微尘",
+        "type": "长柄武器",
+        "lv1": {
+          "n1": "27.5%+27.5%",
+          "n2": "56.9%",
+          "n3": "68.55%",
+          "n4": "37.7%+37.7%",
+          "n5": "71.5%",
+          "n6": "95.8%",
+          "charged": "121%",
+          "charged_stamina": "25.0",
+          "plunge_impact": "81.83%",
+          "plunge_low_high": "163.63%/204.39%"
+        },
+        "note": "下落攻击不承受坠落伤害；重击为上挑攻击"
+      },
+      "skill": {
+        "name_cn": "风轮两立",
+        "lv1": {
+          "skill_dmg": "252.80%"
+        },
+        "cd_s": 10,
+        "charges": "未核到（biligame 明细表未列可用次数；C1 为+1次）"
+      },
+      "burst": {
+        "name_cn": "靖妖傩舞",
+        "lv1": {
+          "na_ca_plunge_dmg_bonus": "58.45%"
+        },
+        "hp_drain": "3.0%当前生命值/秒（LV1至LV3）；2.5%（LV4至LV6）；2.0%（LV7及以上）",
+        "duration_s": 15,
+        "cd_s": 18,
+        "cd_s_note": "biligame 表给18.0秒",
+        "energy_cost": 70
+      }
+    }
+  }
+}
+

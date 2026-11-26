@@ -1,0 +1,178 @@
+{
+  "char": "xiao",
+  "name_zh": "魈",
+  "meta": {
+    "element": "风",
+    "weapon": "长柄",
+    "rarity": 5,
+    "region": "璃月",
+    "leak_batch": "2026-11 原神7.4璃月加强emoji爆料（四图：甘雨/魈/胡桃/夜兰）",
+    "source_image": "assets/02-魈.png",
+    "decoded_at": "2026-11-26",
+    "context": "7.4 璃月批属三波加强的第三波：6.2 蒙德「魔导」批 → 6.7「星导」批 → 7.4 璃月批；「月」为正式名词（6.0–6.7 Luna I~VIII / 月之一至月之八，7.0 起停用），「琉璃映月」查无来源不得当官方副标题；名单可信度：一手名单（DK2 经 hxg_diluc）点名钟离/魈/刻晴/烟绯/甘雨，魈属强证据，夜兰（LoveHappy 补）属弱证据",
+    "confidence_defs": {
+      "high": "有官方/源码/原图原文直接支撑",
+      "medium": "有多重内证但无直接原文",
+      "low": "无锚，仅结构推断"
+    }
+  },
+  "image_lines": [
+    {"line": "H", "raw": "🖌️👀🖐️🧵", "decode": "谜面/身份提示，非名字逐字拼写；谜底未定（详见解码笔记第5节）", "conf": "low"},
+    {"line": "A", "raw": "? ? ? , ♻️↑ 。 ☝️2s💨 , 🔃✖️。", "decode": "三个数值留白；充能/回能↑；位移技 1 次/2 秒的节奏；刷新类机制移除", "conf": "low"},
+    {"line": "B", "raw": "↑🕐👤🗡️", "decode": "增伤效果的持续/计时↑，作用于自身伤害", "conf": "low"},
+    {"line": "C", "raw": "⭐ : 👤🔃 , ?? 🌀↑ 。", "decode": "固有天赋段落标记（三候择一之主读）：自身效果/层数可刷新；风元素（风轮两立）伤害↑，数值留白", "conf": "medium"},
+    {"line": "c1", "raw": "☝️♻️↑↑ , ☝️+1 , 💥⬆️", "decode": "可使用次数+1；次数与充能同时大幅↑；爆发伤害↑", "conf": "medium"},
+    {"line": "c2", "raw": "all♻️ , 👤max🌀 , ???", "decode": "全队充能；自身风元素（伤害/上限）最大值↑；第三项留白", "conf": "medium"},
+    {"line": "c4", "raw": "💨↓ , 🛡️↓", "decode": "移除旧 C4 的生存词条：防御力+100% 被删；另一条生存/机动词条（💨 指向未核到）一并移除", "conf": "medium"},
+    {"line": "c6", "raw": "2→1。⭐↓ , ⭐: 🔮↑", "decode": "敌人数量门槛 2→1；该天赋触发条件/门槛↓；该天赋某项数值↑（🔮 未决）", "conf": "medium"}
+  ],
+  "changes": [
+    {
+      "slot": "C1",
+      "old": "风轮两立基础可使用次数 2",
+      "new": "3",
+      "unit": "count",
+      "conf": "high",
+      "evidence": "真实 C1「风轮两立的可使用次数增加1次」；gcsim xiao.go 中 Cons>=1 时 SetNumCharges(ActionSkill,3)；图面 c1 ☝️+1"
+    },
+    {
+      "slot": "C1",
+      "old": "无额外回能",
+      "new": "充能/回能↑↑（倍率留白）",
+      "unit": "percent",
+      "conf": "low",
+      "evidence": "图面 c1 ☝️♻️↑↑；无真实基线可比对"
+    },
+    {
+      "slot": "C1",
+      "old": "无爆发增伤",
+      "new": "爆发伤害↑（数值留白）",
+      "unit": "percent",
+      "conf": "low",
+      "evidence": "图面 c1 💥⬆️；真实 C1 无此条"
+    },
+    {
+      "slot": "C2",
+      "old": "仅自身：处于队伍后台时元素充能效率+25%",
+      "new": "全队充能（all 与 👤 对举）",
+      "unit": "scope",
+      "conf": "medium",
+      "evidence": "图面 c2 all♻️，all 与 👤 对举 = 全队/队伍层面而非自身；真实 C2 原文「处在队伍后台时…魈自己的元素充能效率提高25％」（BWIKI 缓存第809行）。外部线索（非图面符号，仅推断）：7.4 加强据称针对「会一起上场」的璃月角色，社区类比千岩长枪的队伍计数，可能带「队伍中璃月角色数量」触发，与 6.2「≥2 名魔导角色触发秘仪」同构。"
+    },
+    {
+      "slot": "C2",
+      "old": "无",
+      "new": "自身风元素（伤害/上限）最大值↑，数值留白 ??",
+      "unit": "percent",
+      "conf": "low",
+      "evidence": "图面 c2 👤max🌀"
+    },
+    {
+      "slot": "C4",
+      "old": "生命值低于50%时防御力+100%",
+      "new": "移除（🛡️↓）",
+      "unit": "percent",
+      "conf": "high",
+      "evidence": "真实 C4 原文（BWIKI 缓存第814行）；图面 c4 🛡️↓；gcsim 注释「TODO: C4 is not implemented - don't really care about def」为第三方旁证"
+    },
+    {
+      "slot": "C4",
+      "old": "同层某条生存/机动词条（💨 指向未核到：候选为跳跃机动或抗打断）",
+      "new": "移除（💨↓）",
+      "unit": "n/a",
+      "conf": "medium",
+      "evidence": "图面 c4 💨↓；现版本魈技能文本检索「抗打断」0 命中，仅「大幅提升跳跃能力」「下落免疫坠落伤害」"
+    },
+    {
+      "slot": "C6",
+      "old": "至少 2 个敌人",
+      "new": "至少 1 个敌人",
+      "unit": "count",
+      "conf": "high",
+      "evidence": "真实 C6「下落攻击命中至少2个敌人时…」（BWIKI 缓存第819行）；图面 c6 2→1"
+    },
+    {
+      "slot": "C6",
+      "old": "—",
+      "new": "该天赋（固有天赋）触发条件/门槛↓",
+      "unit": "n/a",
+      "conf": "medium",
+      "evidence": "图面 c6 ⭐↓；⭐ 主读为固有天赋段落标记——形态是段首加冒号，且 ⭐: 👤🔃 的 🔃 只能挂在天赋层数/持续时间上（A4 原文「叠加时刷新持续时间」）。另两读已排除：若 ⭐=星导/星系体系标签，则 ⭐↓ 变成「体系某项被下调」，与加强语境自相矛盾；若 ⭐=暴击率/暴击伤害，🔃 与 🌀↑ 都挂不上宿主。"
+    },
+    {
+      "slot": "C6",
+      "old": "—",
+      "new": "该天赋某项数值↑（🔮 未决）",
+      "unit": "n/a",
+      "conf": "low",
+      "evidence": "图面 c6 ⭐: 🔮↑；🔮 全批仅此一处无锚，按词典v2 收窄为「天赋中的某项乘区/数值」（主读：天赋加成数值；次读：上限或新增乘区）"
+    },
+    {
+      "slot": "A4",
+      "old": "坏劫·国土碾尘：施放风轮两立后7秒内风轮两立伤害每层+15%，最多3层，叠加时刷新",
+      "new": "自身可刷新 + 风元素伤害↑??（数值留白）",
+      "unit": "percent",
+      "conf": "medium",
+      "evidence": "真实 A4 原文（gcsim skill.go 注释 + BWIKI 缓存第1148-1149行）；图面行C ⭐: 👤🔃 , ?? 🌀↑"
+    },
+    {
+      "slot": "E",
+      "old": "冷却 10 秒",
+      "new": "2 秒 1 次（读数存疑，非定论）",
+      "unit": "second",
+      "conf": "low",
+      "evidence": "图面行A ☝️2s💨 , 🔃✖️；gcsim skill.go SetCD(ActionSkill,600)=10秒"
+    }
+  ],
+  "unknowns": [
+    "行A 的 ? ? ?：三个留白数值，爆料者未给，不填冒充值",
+    "行C 的 ??：风元素伤害提高幅度留白",
+    "c2 的 ???：第三项留白",
+    "🔮：全批仅 c6 一处，无锚；按词典v2 候选池收窄为「天赋中的某项乘区/数值」，主读为天赋加成数值，次读为加减乘区/上限",
+    "💨 在 c4 的具体指向：现版本魈技能文本无「抗打断」条目，未核到；候选为跳跃机动或抗打断",
+    "头部 🖌️👀🖐️🧵 的谜底：判为谜面非名字拼写，谜底未定"
+  ],
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/genshinsim/gcsim/main/internal/characters/xiao/xiao.go",
+      "type": "guide",
+      "time": "2026-11-26"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/genshinsim/gcsim/main/internal/characters/xiao/skill.go",
+      "type": "guide",
+      "time": "2026-11-26"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/genshinsim/gcsim/main/internal/characters/xiao/burst.go",
+      "type": "guide",
+      "time": "2026-11-26"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/genshinsim/gcsim/main/internal/characters/xiao/zz_xiao.dm.go",
+      "type": "guide",
+      "time": "2026-11-26"
+    },
+    {
+      "url": "./",
+      "type": "guide",
+      "time": "2026-11-26"
+    },
+    {
+      "url": "./",
+      "type": "rumor",
+      "time": "2026-11"
+    },
+    {
+      "url": "NGA《[琉璃映月]7.4璃月加强贴吧相关可信爆料搬运汇总》——未取得直链，原始源头为百度贴吧「剑斗绮谭」吧",
+      "type": "rumor",
+      "time": "2026-10-22"
+    },
+    {
+      "url": "一手名单（DK2 经 hxg_diluc 转述，点名钟离/魈/刻晴/烟绯/甘雨；公众号名单 4/4 点名魈）——未取得直链",
+      "type": "rumor",
+      "time": "2026-11"
+    }
+  ]
+}
+

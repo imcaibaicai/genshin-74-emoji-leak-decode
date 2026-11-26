@@ -1,0 +1,7 @@
+{
+  "step": "list",
+  "url_tried": "https://tieba.baidu.com/f?kw=%E5%89%91%E6%96%97%E7%BB%AE%E8%B0%AD&ie=utf-8",
+  "goto_err": "TypeError: page.goto is not a function",
+  "ok": false,
+  "err": "TypeError: page.waitForTimeout is not a function"
+}
